@@ -1,0 +1,30 @@
+name: build on push
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout to repo
+        uses: actions/checkout@v3
+      - name: install packages
+        uses: npm ci
+      - name: lint the code
+        uses: npm run lint
+  test:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout to repo
+        uses: actions/checkout@v3
+      - name: install packages
+        uses: npm ci
+      - name: test the code
+        uses: npm run test
+  deploy:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout to repo
+        uses: actions/checkout@v3
+      - name: install packages
+        uses: npm ci
+      - name: deploy the code
+        uses: npm run build
