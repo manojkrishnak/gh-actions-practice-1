@@ -7,24 +7,24 @@ jobs:
       - name: checkout to repo
         uses: actions/checkout@v3
       - name: install packages
-        uses: npm ci
+        run: npm ci
       - name: lint the code
-        uses: npm run lint
+        run: npm run lint
   test:
     runs-on: ubuntu-latest
     steps: 
       - name: checkout to repo
         uses: actions/checkout@v3
       - name: install packages
-        uses: npm ci
+        run: npm ci
       - name: test the code
-        uses: npm run test
+        run: npm run test
   deploy:
     runs-on: ubuntu-latest
     steps: 
       - name: checkout to repo
         uses: actions/checkout@v3
       - name: install packages
-        uses: npm ci
+        run: npm ci
       - name: deploy the code
-        uses: npm run build
+        run: npm run build
