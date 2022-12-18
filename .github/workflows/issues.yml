@@ -5,4 +5,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: notify when an issue is open
-        run: echo "${{github}}"
+        run: echo "${{ toJSON(github)}}"
